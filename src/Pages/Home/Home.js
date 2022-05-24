@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from './Banner';
+import Products from './Products';
 
 const Home = () => {
     return (
@@ -9,6 +10,7 @@ const Home = () => {
             {/* //Carousel */}
             <Banner></Banner>
 
+            <Products></Products>
 
         </div>
     );
