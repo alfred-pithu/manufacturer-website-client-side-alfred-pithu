@@ -1,13 +1,25 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { NavLink, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
+    const [user, loading, error] = useAuthState(auth);
+
     const navItems = <>
         <li><NavLink to='/'> Home </NavLink></li>
         <li><NavLink to='/blogs'> Blogs </NavLink></li>
         <li><NavLink to='/portfolio'> Portfolio </NavLink></li>
         <li><NavLink to='/dashboard'> Dashboard </NavLink></li>
-        <li><NavLink to='/login'> Login </NavLink></li>
+        {
+            user ? <>
+                <li><NavLink to='/login' className='border border-black rounded hover:btn-primary' onClick={() => signOut(auth)}>LogOut</NavLink></li>
+                <li className='text-sky-800 my-auto mx-3'>{user.email}</li>
+            </>
+
+                : <li><NavLink to='/login'> Login </NavLink></li>
+        }
     </>
 
 

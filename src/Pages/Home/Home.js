@@ -1,7 +1,7 @@
 import React from 'react';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
-import Footer from './Footer';
+import Footer from '../Shared/Footer';
 import Products from './Products';
 import Reviews from './Reviews';
 
@@ -19,7 +19,6 @@ const Home = () => {
 
             <Reviews></Reviews>
 
-            <Footer></Footer>
 
         </div>
     );
