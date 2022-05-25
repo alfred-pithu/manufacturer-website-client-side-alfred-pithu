@@ -15,7 +15,10 @@ const Navbar = () => {
 
         {
             user ? <>
+
                 <li><NavLink to='/dashboard'> Dashboard </NavLink></li>
+
+
                 <li><NavLink to='/login' className='border border-black rounded hover:btn-primary' onClick={() => signOut(auth)}>LogOut</NavLink></li>
                 <li className='text-sky-800 my-auto mx-3'>{user.email}</li>
                 {/* <li className='text-red-600 my-auto mx-3'>{user.displayName}</li> */}
@@ -47,6 +50,15 @@ const Navbar = () => {
                     {navItems}
                 </ul>
             </div>
+
+            <div className='navbar-end lg:hidden'>
+                <label htmlFor="drawer" className=" drawer-button lg:hidden">
+                    <svg className="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512"><path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" /></svg>
+
+                </label>
+            </div>
+
+
 
         </div>
     );
