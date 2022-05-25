@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import './App.css';
 import Blogs from './Pages/Blogs/Blogs';
+import Purchase from './Pages/Checkout/Purchase';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -25,6 +26,7 @@ function App() {
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='/purchase/:id' element={<Purchase></Purchase>}></Route>
         <Route path='/dashboard' element={<Dashboard></Dashboard>}></Route>
 
 
