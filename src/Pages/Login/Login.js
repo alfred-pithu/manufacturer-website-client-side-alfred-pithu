@@ -21,7 +21,7 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    console.log(user || gUser);
+    // console.log(user || gUser);
 
     const [token] = useJWT(user || gUser)
 

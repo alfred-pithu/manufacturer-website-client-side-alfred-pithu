@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
+import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import Loading from '../Shared/Loading';
 import useJWT from '../../Hooks/useJWT';
 
 
 const Signup = () => {
+    // const [name, setName] = useState('');
     const navigate = useNavigate();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-
+    // const [userAuth] = useAuthState(auth);
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
@@ -18,6 +19,11 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+
+    // if (user) {
+    //     // console.log(user);
+    //     userAuth.displayName = name;
+    // }
 
     const [token] = useJWT(user || gUser)
 
@@ -28,6 +34,7 @@ const Signup = () => {
     }, [token, navigate])
 
     const onSubmit = data => {
+        // setName(data.name);
         const email = data.email
         const password = data.pass
         createUserWithEmailAndPassword(email, password)
@@ -43,6 +50,10 @@ const Signup = () => {
         console.log(error);
         errorMessage = <p className='text-error mt-5'>{error.message || gError.message}</p>
     }
+
+
+
+    // console.log(user?.user);
 
 
     return (

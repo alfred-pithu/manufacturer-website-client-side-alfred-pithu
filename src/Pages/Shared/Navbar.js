@@ -5,7 +5,8 @@ import auth from '../../firebase.init';
 import { signOut } from 'firebase/auth';
 
 const Navbar = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
+    console.log(user);
 
     const navItems = <>
         <li><NavLink to='/'> Home </NavLink></li>
@@ -16,6 +17,7 @@ const Navbar = () => {
             user ? <>
                 <li><NavLink to='/login' className='border border-black rounded hover:btn-primary' onClick={() => signOut(auth)}>LogOut</NavLink></li>
                 <li className='text-sky-800 my-auto mx-3'>{user.email}</li>
+                {/* <li className='text-red-600 my-auto mx-3'>{user.displayName}</li> */}
             </>
 
                 : <li><NavLink to='/login'> Login </NavLink></li>
