@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import useJWT from '../../Hooks/useJWT';
@@ -11,6 +11,10 @@ import Loading from '../Shared/Loading';
 
 const Login = () => {
     const navigate = useNavigate();
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
+
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -27,9 +31,9 @@ const Login = () => {
 
     useEffect(() => {
         if (token) {
-            navigate('/')
+            navigate(from, { replace: true });
         }
-    }, [token, navigate])
+    }, [token, navigate, from])
 
     if (loading || gLoading) {
         return <Loading></Loading>
