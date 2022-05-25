@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import Loading from '../Shared/Loading';
+import useJWT from '../../Hooks/useJWT';
 
 
 const Signup = () => {
@@ -18,11 +19,13 @@ const Signup = () => {
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
 
+    const [token] = useJWT(user || gUser)
+
     useEffect(() => {
-        if (user || gUser) {
+        if (token) {
             navigate('/')
         }
-    }, [user, gUser, navigate])
+    }, [token, navigate])
 
     const onSubmit = data => {
         const email = data.email

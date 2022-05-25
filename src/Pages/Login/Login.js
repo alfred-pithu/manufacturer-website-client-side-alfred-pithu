@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import useJWT from '../../Hooks/useJWT';
 import Loading from '../Shared/Loading';
 
 const Login = () => {
@@ -20,11 +21,15 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    console.log(user || gUser);
+
+    const [token] = useJWT(user || gUser)
+
     useEffect(() => {
-        if (user || gUser) {
+        if (token) {
             navigate('/')
         }
-    }, [user, gUser, navigate])
+    }, [token, navigate])
 
     if (loading || gLoading) {
         return <Loading></Loading>
@@ -43,6 +48,7 @@ const Login = () => {
         reset()
     };
 
+    // console.log(user || gUser);
 
     return (
         <div className=" hero h-screen bg-base-100 " >
