@@ -26,7 +26,7 @@ const Purchase = () => {
         setIsDisabled(false)
         setWarning('')
         const stringInput = event.target.value
-        const input = JSON.parse(stringInput);
+        const input = parseInt(stringInput);
         // console.log(input);
 
         if (minimumOrder > input) {
@@ -46,8 +46,8 @@ const Purchase = () => {
         e.preventDefault()
         const email = user.email;
         const itemId = _id
-        const orderQuantity = JSON.parse(e.target.orderQuantity.value)
-        const totalPrice = JSON.parse(e.target.totalPrice.value)
+        const orderQuantity = parseInt(e.target.orderQuantity.value)
+        const totalPrice = parseInt(e.target.totalPrice.value)
         const customerName = e.target.customerName.value
         const itemName = name;
         const contact = e.target.contact.value
@@ -81,7 +81,7 @@ const Purchase = () => {
                 }
             })
 
-
+        e.target.reset()
     }
 
     return (
