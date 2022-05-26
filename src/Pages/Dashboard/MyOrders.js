@@ -6,8 +6,7 @@ import Loading from '../Shared/Loading';
 import MyOrderRow from './MyOrderRow';
 
 const MyOrders = () => {
-    const [user, loading] = useAuthState(auth);
-    // const [myOrders, setMyOrders] = useState([]);
+    const [user] = useAuthState(auth);
     const url = `http://localhost:5000/order?email=${user?.email}`
 
     const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', user], () => fetch(url).then(res => res.json()))
@@ -16,7 +15,6 @@ const MyOrders = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-    // refetch()
     return (
         <div>
             <h2>My Orders : {myOrders.length}</h2>
