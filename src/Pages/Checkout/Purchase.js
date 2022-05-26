@@ -52,6 +52,7 @@ const Purchase = () => {
         const itemName = name;
         const contact = e.target.contact.value
         const address = e.target.address.value
+        // const customerName = user.displayName;
 
         const orderSummary = {
             email,
@@ -86,9 +87,9 @@ const Purchase = () => {
     return (
         <div className='mb-20'>
 
-            <div className='mb-10 mt-5 '>
-                <h3 className='font-semibold text-right'>  <span>{user?.displayName}</span></h3>
-                <h3 className='font-semibold text-right'>  <span>{user?.email}</span></h3>
+            <div className='mb-10 mt-5 text-center'>
+                <h3 className='font-semibold '>  <span>{user?.displayName}</span></h3>
+                <h3 className='font-semibold  text-green-700'>  <span>{user?.email}</span></h3>
             </div>
 
             {/* Product info */}
@@ -110,7 +111,7 @@ const Purchase = () => {
                 <form onSubmit={placeOrder} className='form-control lg:max-w-lg gap-y-5 mx-auto' action="">
                     <input className=' input input-bordered rounded' placeholder='Email' readOnly value={user?.email} type="email" name="email" />
 
-                    <input required className=' input input-bordered rounded' placeholder='Name' type="text" name="customerName" />
+                    <input required className=' input input-bordered rounded' placeholder='Name' value={user?.displayName} type="text" name="customerName" />
 
                     <input required className=' input input-bordered rounded' placeholder='Contact' type="text" name="contact" />
 

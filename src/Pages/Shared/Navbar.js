@@ -19,9 +19,8 @@ const Navbar = () => {
                 <li><NavLink to='/dashboard'> Dashboard </NavLink></li>
 
 
-                <li><NavLink to='/login' className='border border-black rounded hover:btn-primary' onClick={() => signOut(auth)}>LogOut</NavLink></li>
-                <li className='text-sky-800 my-auto mx-3'>{user.email}</li>
-                {/* <li className='text-red-600 my-auto mx-3'>{user.displayName}</li> */}
+                <li ><NavLink to='/login' className='border border-black rounded hover:btn-primary lg:ml-5' onClick={() => signOut(auth)}>LogOut</NavLink></li>
+                <li className='text-white my-auto mx-3 bg-green-700 lg:px-3 rounded-lg text-center '>{user.displayName}</li>
             </>
 
                 : <li><NavLink to='/login'> Login </NavLink></li>
