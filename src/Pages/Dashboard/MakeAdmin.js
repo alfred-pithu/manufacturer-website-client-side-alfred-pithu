@@ -1,18 +1,31 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useAdmin from '../../Hooks/useAdmin';
 import Loading from '../Shared/Loading';
 import MakeAdminRow from './MakeAdminRow';
 
 const MakeAdmin = () => {
+    const navigate = useNavigate()
     const [user, loading] = useAuthState(auth)
     const [isAdmin] = useAdmin(user?.email)
 
 
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users').then(res => res.json()))
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users', {
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+        }
+    }).then(res => {
+        if (res.status === 403) {
+            signOut(auth)
+            navigate('/login')
+        }
+        return res.json()
+    }))
 
     if (loading || isLoading) {
         return <Loading></Loading>

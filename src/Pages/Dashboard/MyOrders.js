@@ -6,18 +6,18 @@ import Loading from '../Shared/Loading';
 import MyOrderRow from './MyOrderRow';
 
 const MyOrders = () => {
-    const [user] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const url = `http://localhost:5000/order?email=${user?.email}`
 
     const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', user], () => fetch(url).then(res => res.json()))
 
 
-    if (isLoading) {
+    if (isLoading || loading) {
         return <Loading></Loading>
     }
     return (
         <div>
-            <h2>My Orders : {myOrders.length}</h2>
+            <h2>My Orders : {myOrders?.length}</h2>
 
             {/* //table */}
             <div className="overflow-x-auto">
