@@ -1,7 +1,17 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
+import auth from '../../firebase.init';
+import useAdmin from '../../Hooks/useAdmin';
+import Loading from '../Shared/Loading';
 
 const Dashboard = () => {
+    const [user, loading] = useAuthState(auth);
+    const [isAdmin] = useAdmin(user?.email)
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     return (
         <div className="drawer drawer-mobile">
 
@@ -16,10 +26,19 @@ const Dashboard = () => {
 
             <div className="drawer-side">
                 <label htmlFor="drawer" className="drawer-overlay"></label>
-                <ul className="menu p-4 overflow-y-auto w-44 bg-base-100 text-base-content">
+                <ul className="menu p-4 overflow-y-auto lg:w-56 w-44 bg-base-100 text-base-content font-semibold border">
                     {/* <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'> My Orders</Link></li>
                     <li><Link to='/dashboard/addreview'> Add Review</Link></li>
+                    {
+                        isAdmin && <>
+                            <li><Link to='/dashboard/manageAllOrders'> Manage All Orders</Link></li>
+                            <li><Link to='/dashboard/addAProduct'> Add A Product</Link></li>
+                            <li><Link to='/dashboard/makeAdmin'> Make Admin</Link></li>
+                            <li><Link to='/dashboard/manageProducts'> Manage  Products</Link></li>
+                        </>
+                    }
+
                     <li><Link to='/dashboard/myprofile'> My Profile</Link></li>
                 </ul>
 
