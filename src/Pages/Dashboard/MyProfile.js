@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
@@ -39,8 +40,11 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                refetch();
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast('Information Updated Successfully')
+                    setIsEdit(false)
+                }
             })
 
 
@@ -48,20 +52,19 @@ const MyProfile = () => {
 
     return (
         <div>
-            <p className='text-2xl'>Your Information</p>
-            <div className=' flex justify-end mt-10'>
-                <button onClick={() => setIsEdit(true)} className='btn btn-sm rounded h-5 mr-10'>Update Information</button>
-            </div>
+            <p className='text-2xl mb-10 lg:ml-10'>Your Information</p>
 
-            <div className='  '>
-                <h2 className='my-2'>Name : <span className='font-semibold'>{data.email}</span></h2>
-                <h2 className='my-2'>email : <span className='font-semibold'>{user.displayName}</span></h2>
-                <h2 className='my-2'>City : <span className='font-semibold'>{data.city}</span></h2>
-                <h2 className='my-2'>Contact : <span className='font-semibold'>{data.contact}</span></h2>
-                <h2 className='my-2'>Education : <span className='font-semibold'>{data.education}</span></h2>
-                <h2 className='my-2'>LinkedIn : <span className='font-semibold'>{data.linkedIn}</span></h2>
+            <div className=' border lg:ml-10 lg:w-96 shadow-md p-7'>
+                <h2 className='my-2 text-lg '>Name : <span className='font-semibold'>{data.email}</span></h2>
+                <h2 className='my-2 text-lg '>email : <span className='font-semibold'>{user.displayName}</span></h2>
+                <h2 className='my-2 text-lg '>City : <span className='font-semibold'>{data.city}</span></h2>
+                <h2 className='my-2 text-lg '>Contact : <span className='font-semibold'>{data.contact}</span></h2>
+                <h2 className='my-2 text-lg '>Education : <span className='font-semibold'>{data.education}</span></h2>
+                <h2 className='my-2 text-lg '>LinkedIn : <span className='font-semibold'>{data.linkedIn}</span></h2>
             </div>
-
+            <div className=' '>
+                <button onClick={() => setIsEdit(true)} className='btn btn-sm rounded h-5 mt-5 lg:ml-10'>Update Information</button>
+            </div>
 
 
             {

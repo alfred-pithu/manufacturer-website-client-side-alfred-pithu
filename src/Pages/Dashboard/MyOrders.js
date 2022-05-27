@@ -31,7 +31,8 @@ const MyOrders = () => {
                             <th>Product</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
-                            <th></th>
+                            <th>Payment Status</th>
+                            <th>Transaction Id</th>
                             <th></th>
                         </tr>
                     </thead>
