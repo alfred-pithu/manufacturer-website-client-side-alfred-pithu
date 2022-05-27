@@ -1,11 +1,12 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 
 const AddAProduct = () => {
 
     const addToInventory = e => {
         e.preventDefault()
         const name = e.target.name.value;
-        const img = e.target.img.files[0]
+        const image = e.target.img.files[0]
         // console.log(img);
         const description = e.target.description?.value;
         const minimumOrder = parseInt(e.target.minimumOrder?.value);
@@ -13,10 +14,8 @@ const AddAProduct = () => {
         const price = parseInt(e.target.price?.value);
 
 
-
-
         const formData = new FormData()
-        formData.append('image', img)
+        formData.append('image', image)
         const url = `https://api.imgbb.com/1/upload?key=6686968ed82ee3233c86a814b2b3a008`
         fetch(url, {
             method: 'POST',
@@ -25,7 +24,33 @@ const AddAProduct = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data.data.url);
+                if (data.success) {
+                    const img = data.data.url
+                    console.log(img);
+
+                    const newProduct = {
+                        name,
+                        img,
+                        description,
+                        minimumOrder,
+                        available,
+                        price
+                    }
+
+                    fetch('http://localhost:5000/product', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'Application/json'
+                        },
+                        body: JSON.stringify(newProduct)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                toast.success('Product Added Successfully in the Inventory')
+                            }
+                        })
+                }
             })
 
 

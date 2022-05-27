@@ -93,14 +93,16 @@ const Purchase = () => {
             </div>
 
             {/* Product info */}
-            <div className="card lg:card-side bg-base-100 lg:max-w-4xl rounded-sm border mx-auto ">
+            <div className="card lg:card-side bg-base-100 lg:max-w-4xl lg:max-h-72  rounded-sm  mx-auto shadow px-5 ">
                 <figure><img src={img} alt="Album" /></figure>
-                <div className="card-body">
-                    <h2 className="card-title">{name}</h2>
-                    <p className=''>{description}</p>
-                    <p className='font-semibold'>Minimum Order: {minimumOrder} units</p>
-                    <p className='font-semibold'>Available : {available} units</p>
-                    <p className='font-semibold'>Price : {price}$ /unit</p>
+                <div className="card-body  ">
+                    <div className='gap-5 flex flex-col'>
+                        <h2 className="card-title">{name}</h2>
+                        <p className=''>{description}</p>
+                        <p className='font-semibold'>Minimum Order: {minimumOrder} units</p>
+                        <p className='font-semibold'>Available : {available} units</p>
+                        <p className='font-semibold'>Price : {price}$ /unit</p>
+                    </div>
 
                 </div>
 
