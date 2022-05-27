@@ -3,9 +3,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import MyOrderModal from './MyOrderModal';
 import MyOrderRow from './MyOrderRow';
 
 const MyOrders = () => {
+    const [deleteOrder, setDeleteOrder] = useState(null);
     const [user, loading] = useAuthState(auth);
     const url = `http://localhost:5000/order?email=${user?.email}`
 
@@ -34,11 +36,16 @@ const MyOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            myOrders.map((order, index) => <MyOrderRow key={order._id} refetch={refetch} index={index} order={order}></MyOrderRow>)
+                            myOrders.map((order, index) => <MyOrderRow key={order._id} setDeleteOrder={setDeleteOrder} refetch={refetch} index={index} order={order}></MyOrderRow>)
                         }
                     </tbody>
                 </table>
             </div>
+
+            {
+                deleteOrder && <MyOrderModal deleteOrder={deleteOrder} setDeleteOrder={setDeleteOrder} refetch={refetch}></MyOrderModal>
+            }
+
         </div>
     );
 };

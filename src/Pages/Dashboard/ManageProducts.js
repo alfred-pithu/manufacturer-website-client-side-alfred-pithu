@@ -27,7 +27,7 @@ const ManageProducts = () => {
             <div className="divider w-2/4 mx-auto bg-black h-[1px]"></div>
             <h2 className='text-2xl text-primary font-semibold my-3 '>Total : {products.length}</h2>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto w-3/4 mx-auto border">
                 <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
@@ -49,7 +49,7 @@ const ManageProducts = () => {
                                 <td>{p.price}$</td>
                                 <td>{p.available} units</td>
                                 <td onClick={() => setProduct(p)} >
-                                    <label htmlFor="delete-modal" className="btn modal-button">
+                                    <label htmlFor="delete-modal" className=" btn bg-red-400 border-0 btn-xs rounded-lg  modal-button">
                                         <FontAwesomeIcon icon={faCancel}></FontAwesomeIcon>
                                     </label>
 
