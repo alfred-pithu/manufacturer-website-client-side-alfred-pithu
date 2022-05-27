@@ -1,19 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import useAllProducts from '../../Hooks/useAllProducts';
+import Loading from '../Shared/Loading';
 import ProductCard from './ProductCard';
 
 const Products = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:5000/products')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data);
-            })
-    }, [])
+    const [products] = useAllProducts();
+
+
     return (
         <div className='my-20  grid grid-cols-1 lg:grid-cols-3 gap-10 p-4'>
             {
-                products.map((p) => <ProductCard product={p} key={p._id} ></ProductCard>)
+                products?.map((p) => <ProductCard product={p} key={p._id} ></ProductCard>)
             }
         </div>
     );
