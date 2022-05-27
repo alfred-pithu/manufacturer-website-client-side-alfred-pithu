@@ -16,6 +16,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import Signup from './Pages/Login/Signup';
+import Payment from './Pages/Payment/Payment';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
@@ -34,6 +35,9 @@ function App() {
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+
+        <Route path='/payment/:id' element={<Payment></Payment>}></Route>
+
         <Route path='/purchase/:id' element={<RequireAuth>
           <Purchase></Purchase>
         </RequireAuth>}></Route>
