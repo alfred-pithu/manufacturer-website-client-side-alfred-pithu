@@ -6,7 +6,12 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 const ManageAllOrders = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
-    const { data: orders, isLoading, refetch } = useQuery('allOrder', () => fetch('https://frozen-tundra-73079.herokuapp.com/orders').then(res => res.json()))
+    const { data: orders, isLoading, refetch } = useQuery('allOrder', () => fetch('https://frozen-tundra-73079.herokuapp.com/orders', {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+        }
+    }).then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

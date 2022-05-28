@@ -11,7 +11,13 @@ const MyOrders = () => {
     const [user, loading] = useAuthState(auth);
     const url = `https://frozen-tundra-73079.herokuapp.com/order?email=${user?.email}`
 
-    const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', user], () => fetch(url).then(res => res.json()))
+    const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', user], () => fetch(url, {
+        method: 'GET',
+        headers: {
+            authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+        }
+
+    }).then(res => res.json()))
 
 
     if (isLoading || loading) {

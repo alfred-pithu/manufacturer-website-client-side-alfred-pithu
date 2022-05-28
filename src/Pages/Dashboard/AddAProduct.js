@@ -40,7 +40,8 @@ const AddAProduct = () => {
                     fetch('https://frozen-tundra-73079.herokuapp.com/product', {
                         method: 'POST',
                         headers: {
-                            'content-type': 'Application/json'
+                            'content-type': 'Application/json',
+                            authorization: `Bearer ${localStorage.getItem('jwtToken')}`
                         },
                         body: JSON.stringify(newProduct)
                     })
@@ -55,7 +56,7 @@ const AddAProduct = () => {
 
 
 
-        // e.target.reset()
+        e.target.reset()
     }
 
     return (

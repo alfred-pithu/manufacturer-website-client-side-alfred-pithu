@@ -10,9 +10,6 @@ import ConfirmDeleteModal from './ConfirmDeleteModal';
 const ManageProducts = () => {
     const [product, setProduct] = useState(null);
 
-    // using the custom hook to get all products
-    // const [products] = useAllProducts()
-
     const { data: products, refetch, isLoading } = useQuery('products', () => fetch('https://frozen-tundra-73079.herokuapp.com/products').then(res => res.json()))
 
     if (isLoading) {
@@ -61,8 +58,7 @@ const ManageProducts = () => {
             </div>
 
 
-            {/* <!-- The button to open modal --> */}
-            {/* <label htmlFor="delete-modal" className="btn modal-button"></label> */}
+
 
             {
                 product && <ConfirmDeleteModal product={product} refetch={refetch} setProduct={setProduct} ></ConfirmDeleteModal>

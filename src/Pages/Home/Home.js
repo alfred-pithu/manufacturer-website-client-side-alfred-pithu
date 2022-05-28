@@ -4,6 +4,8 @@ import BusinessSummary from './BusinessSummary';
 import Footer from '../Shared/Footer';
 import Products from './Products';
 import Reviews from './Reviews';
+import InventoryVisit from './InventoryVisit';
+import EmailUs from './EmailUs';
 
 const Home = () => {
     return (
@@ -19,7 +21,9 @@ const Home = () => {
 
             <Reviews></Reviews>
 
+            <InventoryVisit></InventoryVisit>
 
+            <EmailUs></EmailUs>
         </div>
     );
 };

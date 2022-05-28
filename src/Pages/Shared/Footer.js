@@ -4,11 +4,11 @@ const Footer = () => {
     return (
         <footer className="footer mt-10 mb-5 p-10 bg-neutral text-neutral-content">
             <div>
-                <span className="footer-title">Services</span>
-                <a className="link link-hover">Branding</a>
-                <a className="link link-hover">Design</a>
-                <a className="link link-hover">Marketing</a>
-                <a className="link link-hover">Advertisement</a>
+                <span className="footer-title">Products</span>
+                <a className="link link-hover">GPU</a>
+                <a className="link link-hover">HDD</a>
+                <a className="link link-hover">SSD</a>
+                <a className="link link-hover">UPS</a>
             </div>
             <div>
                 <span className="footer-title">Company</span>

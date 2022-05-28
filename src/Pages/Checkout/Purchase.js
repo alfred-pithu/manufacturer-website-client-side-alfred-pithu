@@ -69,7 +69,8 @@ const Purchase = () => {
         fetch('https://frozen-tundra-73079.herokuapp.com/order', {
             method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
             },
             body: JSON.stringify(orderSummary)
         })

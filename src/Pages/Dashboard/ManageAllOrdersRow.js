@@ -8,10 +8,6 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeleteOrder }) => {
     const [displayShipped, setDisplayShipped] = useState('');
     const [displayPending, setDisplayPending] = useState('')
 
-    // if (status === 'Pending') {
-    //     setDisplay('none')
-    // }
-
     useEffect(() => {
         status === 'Pending' && setDisplayShipped('none');
         status === 'Shipped' && setDisplayShipped('inline');
@@ -20,10 +16,11 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeleteOrder }) => {
     }, [status])
 
     const updateStatus = () => {
-        fetch(`http://localhost:5000/updateToShipped/${_id}`, {
+        fetch(`https://frozen-tundra-73079.herokuapp.com/updateToShipped/${_id}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'Application/json'
+                'content-type': 'Application/json',
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
             },
 
         })
@@ -35,21 +32,6 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeleteOrder }) => {
                 }
             })
     }
-
-    // const deleteUnpaidOrder = () => {
-    //     fetch(`http://localhost:5000/order/${_id}`, {
-    //         method: 'DELETE'
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             // console.log(data);
-    //             if (data.deletedCount > 0) {
-    //                 refetch()
-    //                 toast.success('Order Deleted')
-
-    //             }
-    //         })
-    // }
 
 
     return (

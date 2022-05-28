@@ -34,7 +34,8 @@ const MyProfile = () => {
         fetch(`https://frozen-tundra-73079.herokuapp.com/user/${user.email}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'Application/json'
+                'content-type': 'Application/json',
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
             },
             body: JSON.stringify(updatedInfo)
         })

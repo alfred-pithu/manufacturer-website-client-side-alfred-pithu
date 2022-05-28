@@ -6,7 +6,7 @@ const Reviews = () => {
     const { data: feedbacks, refetch } = useQuery('feedbacks', () => fetch('https://frozen-tundra-73079.herokuapp.com/feedbacks').then(res => res.json()))
 
     return (
-        <div className='my-32  '>
+        <div className='mt-32  '>
             <h2 className='font-bold text-3xl text-center mb-5 uppercase'>What our Clients Say</h2>
             <div className=' grid grid-cols-1 lg:grid-cols-3 gap-y-5 lg:gap-5   py-10'>
                 {

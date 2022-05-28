@@ -6,7 +6,10 @@ const MyOrderModal = ({ refetch, deleteOrder, setDeleteOrder }) => {
 
     const deleteItem = () => {
         fetch(`https://frozen-tundra-73079.herokuapp.com/order/${_id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

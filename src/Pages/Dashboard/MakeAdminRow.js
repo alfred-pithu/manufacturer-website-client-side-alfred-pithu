@@ -10,7 +10,11 @@ const MakeAdminRow = ({ user, index, refetch }) => {
 
 
         fetch(url, {
-            method: 'PATCH'
+            method: 'PATCH',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('jwtToken')}`
+            }
+
         })
             .then(res => res.json())
             .then(data => {
