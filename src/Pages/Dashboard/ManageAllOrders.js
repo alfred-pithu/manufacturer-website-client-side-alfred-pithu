@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Shared/Loading';
+import AdminOrderDeleteModal from './AdminOrderDeleteModal';
 import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 const ManageAllOrders = () => {
-
+    const [deleteOrder, setDeleteOrder] = useState(null);
     const { data: orders, isLoading, refetch } = useQuery('allOrder', () => fetch('https://frozen-tundra-73079.herokuapp.com/orders').then(res => res.json()))
 
     if (isLoading) {
@@ -33,12 +34,14 @@ const ManageAllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <ManageAllOrdersRow key={order._id} index={index} refetch={refetch} order={order}></ManageAllOrdersRow>)
+                            orders.map((order, index) => <ManageAllOrdersRow key={order._id} setDeleteOrder={setDeleteOrder} index={index} refetch={refetch} order={order}></ManageAllOrdersRow>)
                         }
                     </tbody>
                 </table>
             </div>
-
+            {
+                deleteOrder && <AdminOrderDeleteModal order={deleteOrder} setDeleteOrder={setDeleteOrder} refetch={refetch}></AdminOrderDeleteModal>
+            }
         </div>
     );
 };
