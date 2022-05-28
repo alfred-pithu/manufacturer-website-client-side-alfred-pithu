@@ -3,7 +3,7 @@ import { useQuery } from 'react-query';
 import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
-    const { data: feedbacks, refetch } = useQuery('feedbacks', () => fetch('http://localhost:5000/feedbacks').then(res => res.json()))
+    const { data: feedbacks, refetch } = useQuery('feedbacks', () => fetch('https://frozen-tundra-73079.herokuapp.com/feedbacks').then(res => res.json()))
 
     return (
         <div className='my-32  '>

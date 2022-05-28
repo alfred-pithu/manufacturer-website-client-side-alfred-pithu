@@ -14,7 +14,7 @@ const AddReview = () => {
         }
         // console.log(review);
 
-        fetch('http://localhost:5000/feedbacks', {
+        fetch('https://frozen-tundra-73079.herokuapp.com/feedbacks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

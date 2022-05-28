@@ -13,7 +13,7 @@ const ManageProducts = () => {
     // using the custom hook to get all products
     // const [products] = useAllProducts()
 
-    const { data: products, refetch, isLoading } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
+    const { data: products, refetch, isLoading } = useQuery('products', () => fetch('https://frozen-tundra-73079.herokuapp.com/products').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

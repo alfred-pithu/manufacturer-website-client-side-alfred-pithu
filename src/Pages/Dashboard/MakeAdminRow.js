@@ -6,7 +6,7 @@ const MakeAdminRow = ({ user, index, refetch }) => {
 
 
     const makeAdmin = () => {
-        const url = `http://localhost:5000/user/${user.email}`
+        const url = `https://frozen-tundra-73079.herokuapp.com/user/${user.email}`
 
 
         fetch(url, {

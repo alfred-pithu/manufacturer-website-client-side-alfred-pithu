@@ -3,7 +3,7 @@ import { useQuery } from "react-query"
 
 const useAdmin = (email) => {
     const [isAdmin, setIsAdmin] = useState(null)
-    const url = `http://localhost:5000/admin/${email}`
+    const url = `https://frozen-tundra-73079.herokuapp.com/admin/${email}`
 
 
     // const { data, refetch } = useQuery(['admin', email], () => fetch(url).then(res => res.json()))

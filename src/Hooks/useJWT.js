@@ -5,7 +5,7 @@ const useJWT = user => {
 
     const email = user?.user?.email;
     const currentUser = { email: email }
-    const url = `http://localhost:5000/token?email=${email}`
+    const url = `https://frozen-tundra-73079.herokuapp.com/token?email=${email}`
 
     if (email) {
         fetch(url, {

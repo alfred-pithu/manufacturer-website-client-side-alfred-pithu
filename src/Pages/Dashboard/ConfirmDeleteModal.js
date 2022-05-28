@@ -5,7 +5,7 @@ const ConfirmDeleteModal = ({ product, setProduct, refetch }) => {
     const { _id, name } = product;
 
     const deleteProduct = () => {
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`https://frozen-tundra-73079.herokuapp.com/product/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

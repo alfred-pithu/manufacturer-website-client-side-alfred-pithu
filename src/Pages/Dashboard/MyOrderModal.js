@@ -5,7 +5,7 @@ const MyOrderModal = ({ refetch, deleteOrder, setDeleteOrder }) => {
     const { itemName, orderQuantity, _id } = deleteOrder;
 
     const deleteItem = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://frozen-tundra-73079.herokuapp.com/order/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

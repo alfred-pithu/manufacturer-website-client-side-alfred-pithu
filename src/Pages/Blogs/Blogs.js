@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 
 const Blogs = () => {
-    // const { data: products } = useQuery('products', () => fetch('http://localhost:5000/products').then(res => res.json()))
+    // const { data: products } = useQuery('products', () => fetch('https://frozen-tundra-73079.herokuapp.com/products').then(res => res.json()))
 
     // console.log(products);
 

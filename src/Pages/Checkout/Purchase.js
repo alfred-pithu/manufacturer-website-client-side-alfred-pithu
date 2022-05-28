@@ -16,7 +16,7 @@ const Purchase = () => {
 
     //getting the item's info
     useEffect(() => {
-        fetch(`http://localhost:5000/oneitem/${id}`)
+        fetch(`https://frozen-tundra-73079.herokuapp.com/oneitem/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [id])
@@ -66,7 +66,7 @@ const Purchase = () => {
         }
         console.log(orderSummary);
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://frozen-tundra-73079.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
