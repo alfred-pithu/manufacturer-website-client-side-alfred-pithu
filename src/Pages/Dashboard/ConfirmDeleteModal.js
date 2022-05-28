@@ -25,7 +25,6 @@ const ConfirmDeleteModal = ({ product, setProduct, refetch }) => {
     return (
         <div>
 
-
             {/* <!-- Put this part before </body> tag --> */}
             <input type="checkbox" id="delete-modal" className="modal-toggle" />
             <div className="modal ">

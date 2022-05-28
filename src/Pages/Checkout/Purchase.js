@@ -8,7 +8,7 @@ const Purchase = () => {
     const [warning, setWarning] = useState('');
     const [quantity, setQuantity] = useState(0);
     const [isDisabled, setIsDisabled] = useState(null)
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const { id } = useParams();
     const [item, setItem] = useState({})
 
@@ -21,13 +21,12 @@ const Purchase = () => {
             .then(data => setItem(data))
     }, [id])
 
-    // 
+
     const quantityHandle = event => {
         setIsDisabled(false)
         setWarning('')
         const stringInput = event.target.value
         const input = parseInt(stringInput);
-        // console.log(input);
 
         if (minimumOrder > input) {
             setIsDisabled(true)
@@ -52,7 +51,6 @@ const Purchase = () => {
         const itemName = name;
         const contact = e.target.contact.value
         const address = e.target.address.value
-        // const customerName = user.displayName;
 
         const orderSummary = {
             email,

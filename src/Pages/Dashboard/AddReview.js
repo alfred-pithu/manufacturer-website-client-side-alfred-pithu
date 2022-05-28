@@ -13,7 +13,6 @@ const AddReview = () => {
             comment: e.target.reviewText.value,
             rating: e.target.rating.value,
         }
-        // console.log(review);
 
         fetch('https://frozen-tundra-73079.herokuapp.com/feedbacks', {
             method: 'POST',

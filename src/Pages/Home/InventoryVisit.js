@@ -8,7 +8,7 @@ const InventoryVisit = () => {
                 <div>
                     <h1 class="text-4xl font-bold">Book To Visit Our Inventory</h1>
                     <p class="py-6">Come and see how we process your products</p>
-                    <a target='_blank' href="https://www.booking.com/"><button class="btn btn-primary rounded">Book Now</button></a>
+                    <a target='_blank' href="https://www.booking.com/"><button class="btn btn-error text-white rounded">Book Now</button></a>
                 </div>
             </div>
         </div>

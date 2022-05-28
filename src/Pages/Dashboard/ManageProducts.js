@@ -2,8 +2,6 @@ import { faCancel } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { toast } from 'react-toastify';
-import useAllProducts from '../../Hooks/useAllProducts';
 import Loading from '../Shared/Loading';
 import ConfirmDeleteModal from './ConfirmDeleteModal';
 
@@ -15,7 +13,6 @@ const ManageProducts = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
-
 
     return (
         <div>
@@ -56,8 +53,6 @@ const ManageProducts = () => {
                     </tbody>
                 </table>
             </div>
-
-
 
 
             {

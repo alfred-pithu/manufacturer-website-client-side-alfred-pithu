@@ -22,7 +22,6 @@ const ManageAllOrders = () => {
             <h2 className='mb-1 text-xl font-semibold text-center'>Manage All Orders : {orders?.length}</h2>
             <div className='divider w-1/3 mx-auto bg-black h-[1px] rounded'></div>
 
-
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     {/* <!-- head --> */}

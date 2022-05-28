@@ -7,12 +7,10 @@ const AddAProduct = () => {
         e.preventDefault()
         const name = e.target.name.value;
         const image = e.target.img.files[0]
-        // console.log(img);
         const description = e.target.description?.value;
         const minimumOrder = parseInt(e.target.minimumOrder?.value);
         const available = parseInt(e.target.available?.value);
         const price = parseInt(e.target.price?.value);
-
 
         const formData = new FormData()
         formData.append('image', image)
@@ -49,14 +47,13 @@ const AddAProduct = () => {
                         .then(data => {
                             if (data.insertedId) {
                                 toast.success('Product Added Successfully in the Inventory')
+                                e.target.reset()
                             }
                         })
                 }
             })
 
 
-
-        e.target.reset()
     }
 
     return (

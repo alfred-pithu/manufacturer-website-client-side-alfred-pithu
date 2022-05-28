@@ -2,7 +2,6 @@ import { faCancel } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 const MyOrderRow = ({ index, order, setDeleteOrder }) => {
     const { itemName, orderQuantity, totalPrice, _id, paid, transactionId } = order;

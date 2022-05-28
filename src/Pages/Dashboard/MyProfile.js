@@ -11,7 +11,6 @@ const MyProfile = () => {
     const url = `https://frozen-tundra-73079.herokuapp.com/user/${user?.email}`
     const { data, isLoading, refetch } = useQuery('userInfo', () => fetch(url).then(res => res.json()))
 
-    // console.log(data);
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -29,7 +28,6 @@ const MyProfile = () => {
             contact,
             linkedIn,
         }
-        // console.log(updatedInfo);
 
         fetch(`https://frozen-tundra-73079.herokuapp.com/user/${user.email}`, {
             method: 'PUT',

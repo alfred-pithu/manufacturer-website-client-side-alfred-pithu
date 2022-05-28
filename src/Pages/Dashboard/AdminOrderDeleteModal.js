@@ -2,7 +2,7 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const AdminOrderDeleteModal = ({ order, refetch, setDeleteOrder }) => {
-    const { _id, email, itemName, customerName, totalPrice, paid, transactionId, status } = order;
+    const { _id, email, itemName } = order;
 
     const deleteUnpaidOrder = () => {
         fetch(`https://frozen-tundra-73079.herokuapp.com/order/${_id}`, {
@@ -13,7 +13,6 @@ const AdminOrderDeleteModal = ({ order, refetch, setDeleteOrder }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
                 if (data.deletedCount > 0) {
                     refetch()
                     setDeleteOrder(null)
