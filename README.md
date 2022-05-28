@@ -1,8 +1,15 @@
-# Getting Started with Create React App
+## Computer Mania - https://assignment-12-a15bd.firebaseapp.com/
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Features and Functionalities
 
-## Available Scripts
+- Firebase Authentication has been used
+- Some routes are protected and can't be accessed without loggin in
+- Stripe payment gateway has been integrated
+- The Dashboard is different for Users and Admins
+- Users can add review that will appear in the homepage
+- Admins can delete any unpaid order and can change order status
+- Some routes are accessible for admins only
+- Tailwind CSS and Daisy UI has been used for styling
 
 In the project directory, you can run:
 
