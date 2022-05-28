@@ -65,7 +65,7 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeleteOrder }) => {
                         :
                         <>
                             <span style={{ display: displayPending }} className='bg-orange-500 text-white px-3 text-sm rounded-md display'>Pending</span>
-                            <button style={{ display: displayPending }} className='bg-gray-500 px-3 rounded text-sm ml-4 text-white'>Update</button>
+                            <button style={{ display: displayPending }} onClick={updateStatus} className='bg-gray-500 px-3 rounded text-sm ml-4 text-white'>Update</button>
 
                             <span style={{ display: displayShipped }} className='bg-red-400 font-semibold text-white px-3  text-sm rounded-md'>Shipped</span>
 

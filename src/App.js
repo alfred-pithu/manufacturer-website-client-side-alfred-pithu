@@ -18,6 +18,7 @@ import Login from './Pages/Login/Login';
 import Signup from './Pages/Login/Signup';
 import Payment from './Pages/Payment/Payment';
 import Portfolio from './Pages/Portfolio/Portfolio';
+import ErrorPage from './Pages/Shared/ErrorPage';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
 import RequireAuth from './Pages/Shared/RequireAuth';
@@ -60,6 +61,7 @@ function App() {
 
         </Route>
 
+        <Route path='*' element={<ErrorPage></ErrorPage>}></Route>
 
       </Routes>
       <Footer></Footer>
