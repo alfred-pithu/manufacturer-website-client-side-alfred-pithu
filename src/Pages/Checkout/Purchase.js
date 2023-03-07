@@ -16,7 +16,7 @@ const Purchase = () => {
 
     //getting the item's info
     useEffect(() => {
-        fetch(`https://frozen-tundra-73079.herokuapp.com/oneitem/${id}`)
+        fetch(` https://manufacturer-server-l39p.onrender.com/oneitem/${id}`)
             .then(res => res.json())
             .then(data => setItem(data))
     }, [id])
@@ -64,7 +64,7 @@ const Purchase = () => {
         }
         console.log(orderSummary);
 
-        fetch('https://frozen-tundra-73079.herokuapp.com/order', {
+        fetch(' https://manufacturer-server-l39p.onrender.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

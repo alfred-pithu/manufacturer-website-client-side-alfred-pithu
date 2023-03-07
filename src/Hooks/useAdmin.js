@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react"
-import { useQuery } from "react-query"
 
 const useAdmin = (email) => {
     const [isAdmin, setIsAdmin] = useState(null)
-    const url = `https://frozen-tundra-73079.herokuapp.com/admin/${email}`
+    const url = ` https://manufacturer-server-l39p.onrender.com/admin/${email}`
 
     useEffect(() => {
         if (email) {

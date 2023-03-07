@@ -6,7 +6,7 @@ import ManageAllOrdersRow from './ManageAllOrdersRow';
 
 const ManageAllOrders = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
-    const { data: orders, isLoading, refetch } = useQuery('allOrder', () => fetch('https://frozen-tundra-73079.herokuapp.com/orders', {
+    const { data: orders, isLoading, refetch } = useQuery('allOrder', () => fetch(' https://manufacturer-server-l39p.onrender.com/orders', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('jwtToken')}`
@@ -22,8 +22,8 @@ const ManageAllOrders = () => {
             <h2 className='mb-1 text-xl font-semibold text-center'>Manage All Orders : {orders?.length}</h2>
             <div className='divider w-1/3 mx-auto bg-black h-[1px] rounded'></div>
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>
                         <tr>

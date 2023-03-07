@@ -9,7 +9,7 @@ import MyOrderRow from './MyOrderRow';
 const MyOrders = () => {
     const [deleteOrder, setDeleteOrder] = useState(null);
     const [user, loading] = useAuthState(auth);
-    const url = `https://frozen-tundra-73079.herokuapp.com/order?email=${user?.email}`
+    const url = ` https://manufacturer-server-l39p.onrender.com/order?email=${user?.email}`
 
     const { data: myOrders, isLoading, refetch } = useQuery(['myOrders', user], () => fetch(url, {
         method: 'GET',

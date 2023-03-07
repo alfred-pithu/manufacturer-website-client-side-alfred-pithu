@@ -8,7 +8,7 @@ import Loading from '../Shared/Loading';
 const MyProfile = () => {
     const [isEdit, setIsEdit] = useState(false);
     const [user] = useAuthState(auth);
-    const url = `https://frozen-tundra-73079.herokuapp.com/user/${user?.email}`
+    const url = ` https://manufacturer-server-l39p.onrender.com/user/${user?.email}`
     const { data, isLoading, refetch } = useQuery('userInfo', () => fetch(url).then(res => res.json()))
 
     if (isLoading) {
@@ -29,7 +29,7 @@ const MyProfile = () => {
             linkedIn,
         }
 
-        fetch(`https://frozen-tundra-73079.herokuapp.com/user/${user.email}`, {
+        fetch(` https://manufacturer-server-l39p.onrender.com/user/${user.email}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'Application/json',

@@ -16,7 +16,7 @@ const ManageAllOrdersRow = ({ order, index, refetch, setDeleteOrder }) => {
     }, [status])
 
     const updateStatus = () => {
-        fetch(`https://frozen-tundra-73079.herokuapp.com/updateToShipped/${_id}`, {
+        fetch(` https://manufacturer-server-l39p.onrender.com/updateToShipped/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'Application/json',

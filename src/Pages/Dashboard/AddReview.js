@@ -14,7 +14,7 @@ const AddReview = () => {
             rating: e.target.rating.value,
         }
 
-        fetch('https://frozen-tundra-73079.herokuapp.com/feedbacks', {
+        fetch(' https://manufacturer-server-l39p.onrender.com/feedbacks', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

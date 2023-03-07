@@ -5,7 +5,7 @@ const ConfirmDeleteModal = ({ product, setProduct, refetch }) => {
     const { _id, name } = product;
 
     const deleteProduct = () => {
-        fetch(`https://frozen-tundra-73079.herokuapp.com/product/${_id}`, {
+        fetch(` https://manufacturer-server-l39p.onrender.com/product/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('jwtToken')}`

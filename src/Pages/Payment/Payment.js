@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51L29prDbb54g1ZAI9qjz9XEv59oaaEDkkWOv6
 const Payment = () => {
     const { id } = useParams();
 
-    const { data: order, refetch, isLoading } = useQuery(['order', id], () => fetch(`https://frozen-tundra-73079.herokuapp.com/oneOrder/${id}`, {
+    const { data: order, refetch, isLoading } = useQuery(['order', id], () => fetch(` https://manufacturer-server-l39p.onrender.com/oneOrder/${id}`, {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('jwtToken')}`

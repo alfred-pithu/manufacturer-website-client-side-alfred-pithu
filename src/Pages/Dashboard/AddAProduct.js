@@ -35,7 +35,7 @@ const AddAProduct = () => {
                         price
                     }
 
-                    fetch('https://frozen-tundra-73079.herokuapp.com/product', {
+                    fetch(' https://manufacturer-server-l39p.onrender.com/product', {
                         method: 'POST',
                         headers: {
                             'content-type': 'Application/json',

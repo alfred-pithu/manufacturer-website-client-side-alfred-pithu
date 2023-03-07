@@ -1,4 +1,3 @@
-import { async } from '@firebase/util';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
@@ -15,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { totalPrice, email, customerName, _id } = order;
 
     useEffect(() => {
-        fetch('https://frozen-tundra-73079.herokuapp.com/create-payment-intent', {
+        fetch(' https://manufacturer-server-l39p.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -85,7 +84,7 @@ const CheckoutForm = ({ order }) => {
                 // order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://frozen-tundra-73079.herokuapp.com/oneOrder/${_id}`, {
+            fetch(` https://manufacturer-server-l39p.onrender.com/oneOrder/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

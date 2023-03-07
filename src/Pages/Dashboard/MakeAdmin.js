@@ -15,7 +15,7 @@ const MakeAdmin = () => {
 
 
 
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://frozen-tundra-73079.herokuapp.com/users', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch(' https://manufacturer-server-l39p.onrender.com/users', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('jwtToken')}`
         }

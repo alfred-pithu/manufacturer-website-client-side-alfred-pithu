@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
-    const { data: feedbacks, refetch } = useQuery('feedbacks', () => fetch('https://frozen-tundra-73079.herokuapp.com/feedbacks').then(res => res.json()))
+    const { data: feedbacks, refetch } = useQuery('feedbacks', () => fetch(' https://manufacturer-server-l39p.onrender.com/feedbacks').then(res => res.json()))
 
     return (
         <div className='mt-32  '>

@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
 import useAllProducts from '../../Hooks/useAllProducts';
-import Loading from '../Shared/Loading';
 import ProductCard from './ProductCard';
 
 const Products = () => {

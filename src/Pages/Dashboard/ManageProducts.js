@@ -8,7 +8,7 @@ import ConfirmDeleteModal from './ConfirmDeleteModal';
 const ManageProducts = () => {
     const [product, setProduct] = useState(null);
 
-    const { data: products, refetch, isLoading } = useQuery('products', () => fetch('https://frozen-tundra-73079.herokuapp.com/products').then(res => res.json()))
+    const { data: products, refetch, isLoading } = useQuery('products', () => fetch(' https://manufacturer-server-l39p.onrender.com/products').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>
