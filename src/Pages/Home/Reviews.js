@@ -9,7 +9,7 @@ const Reviews = () => {
         <div>
 
             {
-                feedbacks?.length > 1 || <div className='flex justify-around'>
+                feedbacks?.length > 1 || <div className='flex justify-around my-5' >
 
 
                     <span className="loading loading-spinner loading-lg"></span>
