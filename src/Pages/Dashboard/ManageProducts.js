@@ -21,7 +21,7 @@ const ManageProducts = () => {
             <div className="divider w-2/4 mx-auto bg-black h-[1px]"></div>
             <h2 className='text-2xl text-primary font-semibold my-3 '>Total : {products.length}</h2>
 
-            <div className="overflow-x-auto w-3/4 mx-auto border">
+            <div className="overflow-x-auto  mx-auto border">
                 <table className="table w-full">
                     {/* <!-- head --> */}
                     <thead>

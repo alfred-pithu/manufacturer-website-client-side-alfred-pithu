@@ -24,7 +24,7 @@ import RequireAuth from './Pages/Shared/RequireAuth';
 
 function App() {
   return (
-    <div className='px-14'>
+    <div className='lg:px-14'>
       <Navbar></Navbar>
 
       <Routes>
