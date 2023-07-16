@@ -8,19 +8,19 @@ const Navbar = () => {
     const [user] = useAuthState(auth);
     const location = useLocation();
     const navItems = <>
-        <li className='btn list-none btn-outline btn-xs '><Link to='/'> Home </Link></li>
+        <li className='btn list-none btn-outline btn-xs  px-5 '><Link to='/'> Home </Link></li>
 
         {
             user ? <>
 
-                <li className='btn btn-outline list-none btn-xs  '><Link to='/dashboard'> Dashboard </Link></li>
+                <li className='btn btn-outline list-none btn-xs px-5  '><Link to='/dashboard'> Dashboard </Link></li>
 
-                <li className='btn list-none btn-outline btn-xs' onClick={() => signOut(auth)} ><Link to='/login'>LogOut</Link></li>
+                <li className='btn list-none btn-outline btn-xs  px-5 '  ><Link onClick={() => signOut(auth)} to='/login'>LogOut</Link></li>
 
                 <li className='text-white my-auto list-none bg-green-700 lg:px-3 rounded-lg text-center '>{user.displayName}</li>
             </>
 
-                : <li className='btn list-none btn-outline btn-xs'><Link to='/login'> Login </Link></li>
+                : <li className='btn list-none btn-outline btn-xs px-5'><Link to='/login'> Login </Link></li>
         }
     </>
 
