@@ -18,7 +18,7 @@ const Navbar = () => {
                 <li><NavLink to='/dashboard'> Dashboard </NavLink></li>
 
 
-                <li ><NavLink to='/login' className='border border-black rounded hover:btn-primary lg:ml-5' onClick={() => signOut(auth)}>LogOut</NavLink></li>
+                <li ><NavLink to='/login' className='border border-black rounded hover:btn-warning lg:ml-5' onClick={() => signOut(auth)}>LogOut</NavLink></li>
                 <li className='text-white my-auto mx-3 bg-green-700 lg:px-3 rounded-lg text-center '>{user.displayName}</li>
             </>
 

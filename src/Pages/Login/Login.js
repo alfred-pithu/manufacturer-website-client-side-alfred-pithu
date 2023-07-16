@@ -56,6 +56,9 @@ const Login = () => {
             <div className="card w-full max-w-lg shadow-2xl bg-base-100 rounded ">
 
                 <div className="card-body">
+                    <h6 className='text-xs text-center text-green-600'>Admin Email - admin@gmail.com</h6>
+                    <h6 className='text-xs text-center text-green-600'>Admin Pass - 123456</h6>
+
 
                     <form action="" onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-control">
@@ -103,7 +106,7 @@ const Login = () => {
                         <Link to='/signup'>New here ? <span className='text-primary font-semibold'>Signup</span></Link>
                         {errorMessage}
                         <div className="form-control mt-6">
-                            <input type="submit" className="btn btn-primary" value="Login" />
+                            <input type="submit" className="btn bg-black text-white hover:bg-green-700" value="Login" />
                         </div>
                     </form>
 
