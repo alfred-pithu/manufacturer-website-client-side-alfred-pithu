@@ -51,15 +51,15 @@ const MyProfile = () => {
 
     return (
         <div>
-            <p className='text-2xl mb-10 lg:ml-10'>Your Information</p>
+            <p className='text-2xl mb-10 lg:ml-10 text-center underline'>Your Information</p>
 
-            <div className=' border lg:ml-10 lg:w-96 shadow-md p-7'>
-                <h2 className='my-2 text-lg '>Name : <span className='font-semibold'>{data.email}</span></h2>
-                <h2 className='my-2 text-lg '>email : <span className='font-semibold'>{user.displayName}</span></h2>
-                <h2 className='my-2 text-lg '>City : <span className='font-semibold'>{data.city}</span></h2>
-                <h2 className='my-2 text-lg '>Contact : <span className='font-semibold'>{data.contact}</span></h2>
-                <h2 className='my-2 text-lg '>Education : <span className='font-semibold'>{data.education}</span></h2>
-                <h2 className='my-2 text-lg '>LinkedIn : <span className='font-semibold'>{data.linkedIn}</span></h2>
+            <div className='  lg:ml-10 lg:w-96 shadow-md p-7 text-sm flex flex-col gap-y-5'>
+                <h2 >Name : <span className='font-semibold'>{data.email}</span></h2>
+                <h2 >email : <span className='font-semibold'>{user.displayName}</span></h2>
+                <h2 >City : <span className='font-semibold'>{data.city}</span></h2>
+                <h2 >Contact : <span className='font-semibold'>{data.contact}</span></h2>
+                <h2 >Education : <span className='font-semibold'>{data.education}</span></h2>
+                <h2 >LinkedIn : <span className='font-semibold'>{data.linkedIn}</span></h2>
             </div>
             <div className=' '>
                 <button onClick={() => setIsEdit(true)} className='btn btn-sm rounded h-5 mt-5 lg:ml-10'>Update Information</button>

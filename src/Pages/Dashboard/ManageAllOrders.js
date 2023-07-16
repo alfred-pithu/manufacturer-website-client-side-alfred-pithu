@@ -38,7 +38,12 @@ const ManageAllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            orders.map((order, index) => <ManageAllOrdersRow key={order._id} setDeleteOrder={setDeleteOrder} index={index} refetch={refetch} order={order}></ManageAllOrdersRow>)
+                            orders.length === 0 && <div className='flex justify-center'>
+                                <span className="loading loading-spinner loading-lg"></span>
+                            </div>
+                        }
+                        {
+                            orders?.map((order, index) => <ManageAllOrdersRow key={order._id} setDeleteOrder={setDeleteOrder} index={index} refetch={refetch} order={order}></ManageAllOrdersRow>)
                         }
                     </tbody>
                 </table>

@@ -16,8 +16,8 @@ const ProductCard = ({ product }) => {
                 <p className='font-semibold'>Available : {available} units</p>
                 <p className='font-semibold'>Price : {price}$ /unit</p>
 
-                <div className="card-actions lg:ml-auto flex justify-center mt-5 border border-black ">
-                    <Link to={`/purchase/${_id}`} className="btn lg:btn-ghost hover:btn ">Buy Now</Link>
+                <div className="card-actions lg:ml-auto flex justify-center mt-5  ">
+                    <Link to={`/purchase/${_id}`} className="btn btn-outline ">Buy Now</Link>
                 </div>
             </div>
 

@@ -18,12 +18,11 @@ const Dashboard = () => {
             <div className="drawer-content flex flex-col items-center justify-center">
                 {/* Page content here */}
                 <Outlet></Outlet>
-                {/* <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
 
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-70 h-full bg-white text-base-content">
+                <ul className="menu p-4 w-70 h-full bg-white text-base-content gap-y-4 font-bold ">
                     {/* Sidebar content here */}
                     {
                         isAdmin || <>
